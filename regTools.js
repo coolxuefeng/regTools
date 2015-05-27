@@ -19,11 +19,11 @@ regTools.REs = {
     'integer': /^(-?[1-9]\d*|0)$/,
     'nonnegativeInteger': /^([1-9]\d*|0)$/,
     'nonpositiveInteger': /^(-[1-9]\d*|0)$/,
-    'positiveFloating': /^([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$/,
-    'negativeFloating': /^-([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$/,
-    'floating': /^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$/,
-    'nonnegativeFloating': /^([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$/,
-    'nonpositiveFloating': /^((-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0)$/,
+    'positiveFloating': /^([1-9]\d*\.\d*|0?\.\d*[1-9]\d*)$/,
+    'negativeFloating': /^-([1-9]\d*\.\d*|0?\.\d*[1-9]\d*)$/,
+    'floating': /^-?([1-9]\d*\.\d*|0?\.\d*[1-9]\d*|0?\.0+|0)$/,
+    'nonnegativeFloating': /^([1-9]\d*\.\d*|0?\.\d*[1-9]\d*|0?\.0+|0)$/,
+    'nonpositiveFloating': /^((-([1-9]\d*\.\d*|0?\.\d*[1-9]\d*))|0?\.0+|0)$/,
 
     // special string
     'letter': /^[A-Za-z]+$/,
@@ -135,7 +135,6 @@ function check(str) {
     console.log('check isDoubleByte(\'' + str + '\'): ' + regTools.isDoubleByte(str));
     console.log('check isEmail(\'' + str + '\'): ' + regTools.isEmail(str));
     console.log('check isUrl(\'' + str + '\'): ' + regTools.isUrl(str));
-    console.log('check isPhone(\'' + str + '\'): ' + regTools.isPhone(str));
     console.log('check isMobile(\'' + str + '\'): ' + regTools.isMobile(str));
     console.log('check isQQ(\'' + str + '\'): ' + regTools.isQQ(str));
     console.log('check isZip(\'' + str + '\'): ' + regTools.isZip(str));
