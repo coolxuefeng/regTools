@@ -48,10 +48,6 @@ regTools.isUrl = function(str) {
     return regTools.REs['url'].test(str);
 };
 
-regTools.isPhone = function(str) {
-    return regTools.REs['phone'].test(str);
-};
-
 regTools.isMobile = function(str) {
     return regTools.REs['mobile'].test(str);
 };
