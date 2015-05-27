@@ -4,27 +4,26 @@ var regTools = regTools || {};
 // regular expressions via http://www.williamlong.info/archives/433.html
 regTools.REs = {
     'Chinese': /^[\u4e00-\u9fa5]+$/,
-    'doubleByte': /^[\x00-\xff]+$/,
+    'doubleByte': /^[^\u0020-\u007E\uFF61-\uFF9F\uFFA0-\uFFDC\uFFE8-\uFFEE0-9a-zA-Z]+$/,
     'email': /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/,
     'url': /^[a-zA-z]+:\/\/[^\s]*$/,
-    'phone': /^\d{3}-\d{8}|\d{4}-\d{7}$/, // for China
     'mobile': /^1[34578]\d{9}$/, // for China
     'QQ': /^[1-9][0-9]{4,}$/, // Tencent QQ
-    'zip': /^[1-9]\d{5}$/, // for China
-    'IDNumber': /^\d{15}|\d{18}$/, // for China
-    'IP': /^(([01]?\d?\d|2[0-4]\d|25[0-5])\.){3}([01]?\d?\d|2[0-4]\d|25[0-5])$/,
+    'zip': /^((0[1-7]|1[012356]|2[0-7]|3[0-6]|4[0-7]|5[1-7]|6[1-7]|7[1-5]8[13456])\d{4}|99907[78]|86\d{3})$/, // for China
+    'IDNumber': /^(\d{15}|\d{17}[Xx1-9])$/, // for China
+    'IP': /^((([01]?\d?\d|2[0-4]\d|25[0-5])\.){3}([01]?\d?\d|2[0-4]\d|25[0-5]))$/,
 
     // Numbers
     'positiveInteger': /^[1-9]\d*$/,
     'negativeInteger': /^-[1-9]\d*$/,
-    'integer': /^-?[1-9]\d*|0$/,
-    'nonnegativeInteger': /^[1-9]\d*|0$/,
-    'nonpositiveInteger': /^-[1-9]\d*|0$/,
-    'positiveFloating': /^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$/,
+    'integer': /^(-?[1-9]\d*|0)$/,
+    'nonnegativeInteger': /^([1-9]\d*|0)$/,
+    'nonpositiveInteger': /^(-[1-9]\d*|0)$/,
+    'positiveFloating': /^([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$/,
     'negativeFloating': /^-([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$/,
     'floating': /^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$/,
-    'nonnegativeFloating': /^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0$/,
-    'nonpositiveFloating': /^(-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0$/,
+    'nonnegativeFloating': /^([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$/,
+    'nonpositiveFloating': /^((-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0)$/,
 
     // special string
     'letter': /^[A-Za-z]+$/,
